@@ -30,3 +30,6 @@ venv/
 *.pdf
 paper/
 
+# Local-only notes / backlog (not for GitHub)
+local/
+
