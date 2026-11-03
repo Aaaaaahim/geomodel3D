@@ -1,0 +1,39 @@
+{
+  "name": "demo_mine",
+  "bounds": {
+    "min": [498800, 3459800, -50],
+    "max": [500700, 3461400, 160]
+  },
+  "crs_epsg": 32650,
+  "stratigraphy": [
+    { "layer_code": "Q4", "name": "第四系", "order": 0, "color": "#D9CBB8", "alpha": 0.85 },
+    { "layer_code": "N2", "name": "含矿层", "order": 1, "color": "#7FA8C9", "alpha": 0.9 },
+    { "layer_code": "K1", "name": "基底", "order": 2, "color": "#6B7A8D", "alpha": 0.9 }
+  ],
+  "boreholes_csv": "boreholes.csv",
+  "faults_json": "faults.json",
+  "resolution": [24, 24, 12],
+  "engine": "mock",
+  "purpose": "high_precision",
+  "export": ["vtu", "obj"],
+  "reserve": {
+    "mineral": "coal",
+    "body_layers": ["N2"],
+    "method": "block",
+    "density": 1.4,
+    "cutoff_grade": 0.5,
+    "min_thickness": 1.0,
+    "grade_unit": "%",
+    "measured_distance": 300,
+    "indicated_distance": 600,
+    "block_size": [50, 50, 20]
+  },
+  "sections": [
+    { "format": "geojson", "horizontal": [60, 20], "lines": [[499000, 3460500, 500500, 3460500]] }
+  ],
+  "repair": true,
+  "statistics": { "charts": true, "excel": true },
+  "iterate": [
+    { "resolution": [16, 16, 8], "interp": { "method": "idw" } }
+  ]
+}

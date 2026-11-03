@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geomodel3d"
+version = "0.1.0"
+description = "基于 Python + GemPy + OpenGeode 的三维地质建模软件"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "geomodel3d" }]
+dependencies = [
+    "PyQt6>=6.5",
+    "pyvista>=0.42",
+    "pyvistaqt>=0.11",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "pydantic>=2.5",
+    # 以下为运行时实际调用、此前漏声明的依赖
+    "matplotlib>=3.7",   # 统计图表 / 剖面 PNG
+    # Python 3.9 下 matplotlib/pyvista 需要 importlib.resources 回填包
+    "importlib-resources>=3.2; python_version < '3.10'",
+    "pyproj>=3.5",       # 坐标系变换（CRS 服务）
+    "fiona>=1.9",        # SHP 读取 / 导出（GDAL/OGR 绑定）
+    "ezdxf>=1.1",        # DXF 剖面导出
+    "openpyxl>=3.1",     # Excel 储量/统计报表
+]
+
+[project.optional-dependencies]
+crypto = [
+    "cryptography>=42",
+]
+geo = [
+    # OpenGeode-core：Python 3.9 可用（16.x）
+    "opengeode-core>=16.6,<17; python_version < '3.10'",
+    "opengeode-core>=16.6; python_version >= '3.10'",
+    # GemPy 3.x（gempy_engine numpy 后端）需要 Python 3.10+；已按 create_geomodel API 验证 2026.0.3
+    "gempy>=2026.0.3; python_version >= '3.10'",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-qt>=4.4",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+geomodel3d = "geomodel3d.app.main:main"
+geomodel3d-cli = "geomodel3d.jobs.runner:main"
+geomodel3d-bench = "geomodel3d.algorithms.benchmark:main"
+
+[tool.setuptools.packages.find]
+include = ["geomodel3d*"]
+
+[tool.setuptools.package-data]
+geomodel3d = ["assets/*", "config/themes/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "ui: tests that require a Qt event loop",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = ["build", "dist", "packaging"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "UP006", "UP007", "UP035"]

@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.gm3d
+*.vtu
+out/
+.venv/
+venv/
+
+# IDE & Editor files
+.vscode/
+.idea/
+.codemap/
+
+# Temporary, log and crash files
+*.log
+*.dmp
+*.autosave
+*.tmp
+
+# Redundant binary documents & paper drafts
+*.docx
+*.pdf
+paper/
+

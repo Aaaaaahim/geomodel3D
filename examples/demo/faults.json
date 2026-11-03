@@ -1,0 +1,18 @@
+[
+  {
+    "fault_id": "F1",
+    "name": "示例正断层",
+    "trace": [[499200, 3460600, 0], [500500, 3460600, 0]],
+    "params": {
+      "length": 1300,
+      "depth_of_influence": 120,
+      "dip": 65,
+      "strike": 90,
+      "throw_v": 25,
+      "throw_h": 0,
+      "buffer": 60
+    },
+    "side": "normal",
+    "status": "active"
+  }
+]
