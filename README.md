@@ -165,5 +165,5 @@ powershell -ExecutionPolicy Bypass -File scripts\ci_smoke.ps1
 
 ## 11. 许可证 (License)
 
-本项目遵循 **GNU General Public License v3.0 or later (GPL-3.0-or-later)** 开源许可协议。
+本项目遵循 **MIT License** 开源许可协议。
 详见 [LICENSE](LICENSE) 文件。

@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "基于 Python + GemPy + OpenGeode 的三维地质建模软件"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "GPL-3.0-or-later" }
+license = { text = "MIT" }
 authors = [{ name = "geomodel3d" }]
 dependencies = [
     "PyQt6>=6.5",
