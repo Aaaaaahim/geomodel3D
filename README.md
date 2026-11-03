@@ -162,3 +162,8 @@ powershell -ExecutionPolicy Bypass -File scripts\ci_smoke.ps1
 2. 冻结版进一步瘦身（GDAL 驱动裁剪、Qt 插件裁剪）与干净虚拟机发布冒烟。
 3. 剖面坐标网格与更完整图廓（分幅、图签）。
 4. 地震协变量各向异性参数 UI 化与 SEG-Y 更多卷索引格式。
+
+## 11. 许可证 (License)
+
+本项目遵循 **GNU General Public License v3.0 or later (GPL-3.0-or-later)** 开源许可协议。
+详见 [LICENSE](LICENSE) 文件。
